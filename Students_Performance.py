@@ -42,12 +42,6 @@ st.sidebar.write("""
     Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar untuk sebuah institusi pendidikan. Oleh karena itu, Jaya Jaya Institut ingin mendeteksi secepat mungkin siswa yang mungkin akan melakukan dropout sehingga dapat diberi bimbingan khusus.
 """)
 
-add_selectitem = st.sidebar.selectbox("Want to open about?", ("Student's Academic Performance",))
-
-st.sidebar.write(
-    "Data obtained from [Predict Students Dropout and Academic Success Dataset](https://doi.org/10.24432/C5MC89)"
-    )
-
 # Initialize an empty dictionary to store user input
 data = {}
 
