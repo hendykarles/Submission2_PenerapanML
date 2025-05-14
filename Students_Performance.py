@@ -37,11 +37,9 @@ with col2:
     st.subheader(":mortar_board: Prediction of Student's Academic Performance :mortar_board:")
 
 st.sidebar.write("""
-    The Jaya Jaya Institute is one of the educational institutions that has been established since 2000. 
-    Until now, it has produced many graduates with an excellent reputation. 
-    However, there are also many students who do not complete their education, commonly referred to as dropouts.
-    This high dropout rate is undoubtedly a significant issue for an educational institution. 
-    Therefore, the Jaya Jaya Institute aims to detect students who may be at risk of dropping out as early as possible so that they can be provided with special guidance.
+    Jaya Jaya Institut merupakan salah satu institusi pendidikan perguruan yang telah berdiri sejak tahun 2000. Hingga saat ini ia telah mencetak banyak lulusan dengan reputasi yang sangat baik. Akan tetapi, terdapat banyak juga siswa yang tidak menyelesaikan pendidikannya alias dropout.
+
+    Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar untuk sebuah institusi pendidikan. Oleh karena itu, Jaya Jaya Institut ingin mendeteksi secepat mungkin siswa yang mungkin akan melakukan dropout sehingga dapat diberi bimbingan khusus.
 """)
 
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Student's Academic Performance",))
