@@ -1,5 +1,3 @@
-#Students_Performance.py
-
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
@@ -14,16 +12,15 @@ from prediction import prediction
 
 
 #Setting page
-st.set_page_config(page_title="🎓 Students Performance", 
-                   layout="wide")
+st.set_page_config(page_title="Performance Siswa", layout="wide")
 
 #Introduction
 #List of image file names
-image_files = ['logo_JJI.png']
+image_files = ['logo_jji.jpeg']
 
 #Desired image size in pixels
-desired_width = 160
-desired_height = 160
+desired_width = 150
+desired_height = 150
 
 col1, col2 = st.columns([2, 10])
 
@@ -34,12 +31,12 @@ with col1:
         st.image(resized_img)
 with col2:
     st.header(':sparkles: JAYA JAYA INSTITUTE :sparkles:')
-    st.subheader(":mortar_board: Prediction of Student's Academic Performance :mortar_board:")
+    st.subheader(":mortar_board: Prediksi Kinerja Akademik Siswa :mortar_board:")
 
 st.sidebar.write("""
     Jaya Jaya Institut merupakan salah satu institusi pendidikan perguruan yang telah berdiri sejak tahun 2000. Hingga saat ini ia telah mencetak banyak lulusan dengan reputasi yang sangat baik. Akan tetapi, terdapat banyak juga siswa yang tidak menyelesaikan pendidikannya alias dropout.
 
-    Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar untuk sebuah institusi pendidikan. Oleh karena itu, Jaya Jaya Institut ingin mendeteksi secepat mungkin siswa yang mungkin akan melakukan dropout sehingga dapat diberi bimbingan khusus.
+    Jumlah dropout yang tinggi ini tentunya menjadi salah satu masalah yang besar untuk sebuah institusi pendidikan. Oleh karena itu, Jaya Jaya Institut ingin mendeteksi/memprediksi secepat mungkin siswa yang mungkin akan melakukan dropout sehingga dapat diberi bimbingan khusus.
 """)
 
 # Initialize an empty dictionary to store user input
@@ -48,7 +45,7 @@ data = {}
 # Convert user input dictionary to DataFrame
 user_input_df = pd.DataFrame(data, index=[0])
 
-st.markdown("### 📋 Student Information")
+st.markdown("### Informasi Siswa")
 col1, col2, col3 = st.columns(3)
 with col1:
     encoder_Tuition_fees_up_to_date = LabelEncoder()
@@ -83,7 +80,7 @@ with col6:
     Gender = st.selectbox(label='Gender', options=['Female', 'Male'], index=1)
     data['Gender'] = [encoder_Gender.transform([Gender])[0]]
 
-st.markdown("### 📊 Academic Scores")
+st.markdown("### Nilai Akademik")
 col7, col8 = st.columns(2)
 with col7:
     Admission_grade = st.slider(label='Admission Grade', min_value=0, max_value=200, value=100)
@@ -92,7 +89,7 @@ with col8:
     Previous_qualification_grade = st.slider(label='Previous Qualification Grade', min_value=0, max_value=200, value=100)
     data['Previous_qualification_grade'] = [Previous_qualification_grade]
 
-st.markdown("#### 📚 Curricular Units 1st Semester")
+st.markdown("#### Unit Kulikuler Semester 1")
 col9, col10, col11, col12 = st.columns(4)
 with col9:
     Curricular_units_1st_sem_approved = st.number_input(label='1st Sem Approved', value=5)
@@ -107,7 +104,7 @@ with col12:
     Curricular_units_1st_sem_credited = st.number_input(label='1st Sem Credited', value=0)
     data['Curricular_units_1st_sem_credited'] = [Curricular_units_1st_sem_credited]
 
-st.markdown("#### 📚 Curricular Units 2nd Semester")
+st.markdown("#### Unit Kulikuler Semester 2")
 col13, col14, col15, col16 = st.columns(4)
 with col13:
     Curricular_units_2nd_sem_approved = st.number_input(label='2nd Sem Approved', value=5)
@@ -126,10 +123,10 @@ with col16:
 user_input_df = pd.DataFrame(data, index=[0])
 
 # Display user input
-with st.expander("Raw Dataset"):
+with st.expander("Dataset"):
         st.dataframe(data=user_input_df, width=1200, height=20)
 # Preprocess data and make prediction on button click
-if st.button('Click Here to Predict'):
+if st.button('Klik disini untuk prediksi'):
     new_data = data_preprocessing(data=data)
     with st.spinner("Predicting..."):
         time.sleep(2)  # Simulating prediction process
