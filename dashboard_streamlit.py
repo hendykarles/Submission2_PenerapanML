@@ -16,7 +16,7 @@ st.set_page_config(page_title="Performance Siswa", layout="wide")
 
 #Introduction
 #List of image file names
-image_files = ['https://github.com/hendykarles/Submission2_PenerapanML/blob/19d0b074d755d81623d31f2fd811bcf61e77eb84/logo_jji.jpeg']
+image_files = ['logo_jji.jpeg']
 
 #Desired image size in pixels
 desired_width = 150
